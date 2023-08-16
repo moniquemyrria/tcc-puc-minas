@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Configuration\Cadastros\**" />
+    <EmbeddedResource Remove="Configuration\Cadastros\**" />
+    <None Remove="Configuration\Cadastros\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Repositorio\Cadastro\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.5" />
+    <PackageReference Include="NetDevPack.Security.Jwt.Store.EntityFrameworkCore" Version="6.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Dominio\Kodigos.Dominio\Kodigos.Dominio.csproj" />
+    <ProjectReference Include="..\Kodigos.Infra.Core\Kodigos.Infra.Core.csproj" />
+  </ItemGroup>
+
+</Project>

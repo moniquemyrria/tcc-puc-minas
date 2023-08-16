@@ -1,0 +1,9 @@
+.k-input-pa {
+  padding: 10px;
+}
+
+.k-table .q-table__top,
+thead tr:first-child th {
+  background-color: black;
+  color: white;
+}
