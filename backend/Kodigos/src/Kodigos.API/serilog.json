@@ -1,0 +1,34 @@
+{
+  "Serilog": {
+    "Using": [ "Serilog.Sinks.Console" ],
+    "MinimumLevel": {
+      "Default": "Information",
+      "Override": {
+        "Kodigos.SFC": "Information",
+        "Hangfire": "Warning"
+      }
+    },
+    "WriteTo": [
+      {
+        "Name": "Console",
+        "Args": {
+          "outputTemplate": "[{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz}] [{SourceContext}] [{Level}] {Message}{NewLine}{Exception}",
+          "theme": "Serilog.Sinks.SystemConsole.Themes.AnsiConsoleTheme::Code, Serilog.Sinks.Console"
+        }
+      },
+      {
+        "Name": "File",
+        "Args": {
+          "path": ".\\api.log",
+          "outputTemplate": "[{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz}] [{SourceContext}] [{Level}] {Message}{NewLine}{Exception}",
+          "formatter": "Serilog.Formatting.Compact.CompactJsonFormatter,Serilog.Formatting.Compact",
+          "rollingInterval": "Day"
+        }
+      }
+    ]
+  },
+  "Enrich": [ "FromLogContext", "WithMachineName", "WithThreadId", "WithExceptionDetails" ],
+  "Properties": {
+    "Application": ""
+  }
+}
