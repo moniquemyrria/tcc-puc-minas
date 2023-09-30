@@ -51,14 +51,14 @@ builder.Services.AddCors(opt =>
 });
 
 // Adding Authentication
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+//builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 // Adding Jwt Bearer
-.AddJwtBearer(options =>
-{
-    options.RequireHttpsMetadata = false;
-    options.SaveToken = true;
-    options.SetJwksOptions(new JwkOptions("http://localhost:5000/jwks", issuer: "localhost", TimeSpan.FromMinutes(20), audience: "System"));
-});
+//.AddJwtBearer(options =>
+//{
+//    options.RequireHttpsMetadata = false;
+//    options.SaveToken = true;
+//    options.SetJwksOptions(new JwkOptions("http://localhost:5000/jwks", issuer: "localhost", TimeSpan.FromMinutes(20), audience: "System"));
+//});
 
 
 // Add Identity Framework Core..

@@ -14,9 +14,8 @@ var axiosInstance = axios.create({
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json;charset=UTF-8",
-    "Server": "Kestrel",
     Authorization: "Bearer " + token
-  },
+  }
 });
 
 
