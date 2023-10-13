@@ -67,7 +67,7 @@
       <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
         <q-card flat bordered style="max-width: 98%">
           <!-- <q-tooltip> Saldo acumulado </q-tooltip> -->
-          <q-tooltip> Saldo Atual </q-tooltip>
+          <q-tooltip> Saldo </q-tooltip>
           <q-card-section>
             <div style="text-align: start" class="text-h5 q-mt-sm q-mb-xs">
               {{ "R$ " + sumTotalBalance }}
@@ -296,10 +296,13 @@ async function showTotalizersCards() {
     sumTotalExpense.value = result.data.tRetorno.sumTotalExpense;
 
     var saldo = (parseFloat(result.data.tRetorno.sumTotalRevenue.replace('.', '').replace(',', '.')) - parseFloat(result.data.tRetorno.sumTotalExpense.replace('.', '').replace(',', '.')))//result.data.tRetorno.sumTotalBalance;
-    
+   
     if (saldo > 0){
        sumTotalBalance.value = saldo.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     }
+
+    console.log("value: " + sumTotalBalance.value);
+    console.log("saldo: " + saldo);
 
     dialogLoading.value = false;
   }
