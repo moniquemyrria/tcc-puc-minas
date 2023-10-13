@@ -298,7 +298,7 @@ async function showTotalizersCards() {
     var saldo = (parseFloat(result.data.tRetorno.sumTotalRevenue.replace('.', '').replace(',', '.')) - parseFloat(result.data.tRetorno.sumTotalExpense.replace('.', '').replace(',', '.')))//result.data.tRetorno.sumTotalBalance;
    
     if (saldo > 0){
-       sumTotalBalance.value = saldo.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+       sumTotalBalance.value = saldo.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     }
 
     console.log("value: " + sumTotalBalance.value);
