@@ -294,7 +294,12 @@ async function showTotalizersCards() {
   if (result.data.sucesso) {
     sumTotalRevenue.value = result.data.tRetorno.sumTotalRevenue;
     sumTotalExpense.value = result.data.tRetorno.sumTotalExpense;
-    sumTotalBalance.value = (parseFloat(result.data.tRetorno.sumTotalRevenue) - parseFloat(result.data.tRetorno.sumTotalExpense)).toString()//result.data.tRetorno.sumTotalBalance;
+
+    var saldo = (parseFloat(result.data.tRetorno.sumTotalRevenue.replace('.', '').replace(',', '.')) - parseFloat(result.data.tRetorno.sumTotalExpense.replace('.', '').replace(',', '.')))//result.data.tRetorno.sumTotalBalance;
+    
+    if (saldo > 0){
+       sumTotalBalance.value = saldo.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
 
     dialogLoading.value = false;
   }
