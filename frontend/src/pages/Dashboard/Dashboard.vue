@@ -70,8 +70,8 @@
           <q-tooltip> Saldo Atual </q-tooltip>
           <q-card-section>
             <div style="text-align: start" class="text-h5 q-mt-sm q-mb-xs">
-              <!-- {{ "R$ " + sumTotalBalance }} -->
-              {{"R$ " + (sumTotalRevenue - sumTotalExpense) }}
+              {{ "R$ " + sumTotalBalance }}
+              
             </div>
             <div style="text-align: start" class="text-overline">Saldo</div>
           </q-card-section>
@@ -294,7 +294,7 @@ async function showTotalizersCards() {
   if (result.data.sucesso) {
     sumTotalRevenue.value = result.data.tRetorno.sumTotalRevenue;
     sumTotalExpense.value = result.data.tRetorno.sumTotalExpense;
-    sumTotalBalance.value = result.data.tRetorno.sumTotalBalance;
+    sumTotalBalance.value = (result.data.tRetorno.sumTotalRevenue - result.data.tRetorno.sumTotalExpense).toString()//result.data.tRetorno.sumTotalBalance;
 
     dialogLoading.value = false;
   }
