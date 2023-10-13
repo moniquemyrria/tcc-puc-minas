@@ -66,10 +66,12 @@
       </div>
       <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
         <q-card flat bordered style="max-width: 98%">
-          <q-tooltip> Saldo acumulado </q-tooltip>
+          <!-- <q-tooltip> Saldo acumulado </q-tooltip> -->
+          <q-tooltip> Saldo Atual </q-tooltip>
           <q-card-section>
             <div style="text-align: start" class="text-h5 q-mt-sm q-mb-xs">
-              {{ "R$ " + sumTotalBalance }}
+              <!-- {{ "R$ " + sumTotalBalance }} -->
+              {{"R$ " + (sumTotalRevenue - sumTotalExpense) }}
             </div>
             <div style="text-align: start" class="text-overline">Saldo</div>
           </q-card-section>
