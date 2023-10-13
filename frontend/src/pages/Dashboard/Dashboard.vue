@@ -295,11 +295,13 @@ async function showTotalizersCards() {
     sumTotalRevenue.value = result.data.tRetorno.sumTotalRevenue;
     sumTotalExpense.value = result.data.tRetorno.sumTotalExpense;
 
-    console.log("Exp.: " + result.data.tRetorno.sumTotalExpense);
+    
     
 
-    var saldo = (parseFloat(result.data.tRetorno.sumTotalRevenue.replace(',', '.').replace(',', '.')) - parseFloat(result.data.tRetorno.sumTotalExpense.replace('.', '').replace(',', '.')))//result.data.tRetorno.sumTotalBalance;
-   
+    var saldo = (parseFloat(result.data.tRetorno.sumTotalRevenue.replace(',', '').replace('.', ',')) - parseFloat(result.data.tRetorno.sumTotalExpense.replace(',', '').replace('.', ',')))//result.data.tRetorno.sumTotalBalance;
+
+    console.log("Saldo: " + saldo);
+
     if (saldo > 0){
        sumTotalBalance.value = saldo.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     }
