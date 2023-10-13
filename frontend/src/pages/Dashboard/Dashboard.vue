@@ -294,7 +294,7 @@ async function showTotalizersCards() {
   if (result.data.sucesso) {
     sumTotalRevenue.value = result.data.tRetorno.sumTotalRevenue;
     sumTotalExpense.value = result.data.tRetorno.sumTotalExpense;
-    sumTotalBalance.value = (result.data.tRetorno.sumTotalRevenue - result.data.tRetorno.sumTotalExpense).toString()//result.data.tRetorno.sumTotalBalance;
+    sumTotalBalance.value = (parseFloat(result.data.tRetorno.sumTotalRevenue) - parseFloat(result.data.tRetorno.sumTotalExpense)).toString()//result.data.tRetorno.sumTotalBalance;
 
     dialogLoading.value = false;
   }
